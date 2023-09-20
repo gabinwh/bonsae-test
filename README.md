@@ -8,6 +8,7 @@ O objetivo desse projeto é criar um sistema CRUD em Laravel para gerenciar prod
 Antes de começar, verifique se você atendeu aos seguintes requisitos:
 
 -   [ Laravel 10 ](https://laravel.com/) - php: "^8.1";
+-   [ Composer ](https://getcomposer.org/);
 -   [ MySQL](https://www.mysql.com/);
 
 ## 🚀 Iniciando a aplicação localmente
