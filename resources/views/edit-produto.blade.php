@@ -12,7 +12,7 @@
                         placeholder="Nome do produto" value="{{$produto->nome}}"/>
                     @if ($errors->has('nome'))
                         <div>
-                            <span class="invalido">Nome inválido.</span>
+                            <span class="invalido">{{$errors->first('nome')}}</span>
                         </div>
                     @endif
                 </div>
@@ -25,7 +25,7 @@
                         placeholder="Preço do produto" value="{{$produto->preco}}"/>
                     @if ($errors->has('preco'))
                         <div>
-                            <span class="invalido">Preço inválido.</span>
+                            <span class="invalido">{{$errors->first('preco')}}</span>
                         </div>
                     @endif
                 </div>
@@ -38,7 +38,7 @@
                         placeholder="Quantidade do produto" value="{{$produto->quantidade}}"/>
                     @if ($errors->has('quantidade'))
                         <div>
-                            <span class="invalido">Quantidade inválida.</span>
+                            <span class="invalido">{{$errors->first('quantidade')}}</span>
                         </div>
                     @endif
                 </div>
@@ -52,7 +52,7 @@
                     placeholder="Descrição do produto" value="{{$produto->descricao}}"/>
                 @if ($errors->has('descricao'))
                     <div>
-                        <span class="invalido">Descrição inválida.</span>
+                        <span class="invalido">{{$errors->first('descricao')}}</span>
                     </div>
                 @endif
             </div>

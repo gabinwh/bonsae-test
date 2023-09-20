@@ -47,18 +47,5 @@
                 Voltar
             </a>
         </div>
-        <div class="text-center col-auto">
-            <button id="botaoEnviar" type="submit" class="btn btn-success btn-md w-100 mt-4 mb-2">Enviar</button>
-        </div>
     </div>
 @endsection
-@push('js')
-    <script type="text/javascript">
-        $(document).ready(function() {
-            $("#meuForm").submit(function(event) {
-                // Desabilitar o botão de envio
-                $("#botaoEnviar").prop("disabled", true);
-            });
-        });
-    </script>
-@endpush

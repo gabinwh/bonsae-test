@@ -3,6 +3,7 @@
     <div class="card mx-3 my-3 mt-2 ">
         <div class="row card-body">
             <div class="col-12 d-flex justify-content-end mb-2">
+                <input class="mr-4" type="text" id="filtro-nome" placeholder="Pesquisar por nome">
                 <a href="{{route('create-produto')}}" type="button" class="btn btn-success">Cadastrar</a>
             </div>
             <div class="col-12">
@@ -20,7 +21,13 @@
                     @foreach($produtos as $produto)
                         <tr>
                             <th scope="row">{{$produto->id}}</th>
-                            <td>{{$produto->nome}}</td>
+                            <td >
+                                @if(strlen($produto->nome) > 20)
+                                    {{ substr($produto->nome, 0, 20) . '...' }}
+                                @else
+                                    {{ $produto->nome }}
+                                @endif
+                            </td>
                             <td>R${{$produto->preco}}</td>
                             <td>{{$produto->quantidade}}</td>
                             <td>
@@ -49,4 +56,20 @@
             </div>
         </div>
     </div>
+<script>
+    $(document).ready(function () {
+        $('#filtro-nome').on('input', function () {
+            var termoPesquisa = $(this).val().toLowerCase();
+            $('tbody tr').each(function () {
+                var nomeProduto = $(this).find('td:eq(0)').text().toLowerCase();
+                if (nomeProduto.includes(termoPesquisa)) {
+                    $(this).show();
+                } else {
+                    $(this).hide();
+                }
+            });
+        });
+    });
+
+</script>
 @endsection

@@ -13,7 +13,6 @@ use App\Http\Controllers\ProdutoController;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
-
 Route::get("/", [ProdutoController::class, 'index'])->name('listar-produtos');
 Route::get("/cadastrar-produto", [ProdutoController::class, 'create'])->name('create-produto');
 Route::post("/salvar-produto", [ProdutoController::class, 'store'])->name('store-produto');
@@ -21,4 +20,3 @@ Route::get("/editar-produto/{id}", [ProdutoController::class, 'edit'])->name('ed
 Route::get("/ver-produto/{id}", [ProdutoController::class, 'show'])->name('show-produto');
 Route::put("/atualizar-produto/{id}", [ProdutoController::class, 'update'])->name('update-produto');
 Route::delete("/deletar-produto/{id}", [ProdutoController::class, 'delete'])->name('delete-produto');
-
